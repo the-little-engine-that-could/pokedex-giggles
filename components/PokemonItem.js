@@ -6,7 +6,7 @@ class PokemonItem extends Component {
         return /*html*/` 
             <li>
                 <h2>${pokemon.pokemon}</h2>
-                <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png" alt="">
+                <img src="${pokemon.url_image}" alt="">
             </li>
         `;
 
