@@ -3,6 +3,7 @@ import Header from './Header.js';
 import PokemonList from './PokemonList.js';
 import api from '../src/services/api.js';
 import Loading from './Loading.js';
+import Paging from './Paging.js';
 
 class App extends Component {
     render() {
@@ -15,6 +16,9 @@ class App extends Component {
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
 
+        const paging = new Paging();
+        main.appendChild(paging.render());
+
         const pokemonList = new PokemonList({ allPokemon: [] });
         main.appendChild(pokemonList.render());
 
@@ -22,7 +26,7 @@ class App extends Component {
         main.appendChild(loading.render());
 
         function loadPokedex() {
-            
+
             loading.update({ loading: true });
 
             api.getPokemon()
