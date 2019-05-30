@@ -1,5 +1,6 @@
 import Component from './Component.js';
 import Header from './Header.js';
+import PokemonList from './PokemonList.js';
 
 class App extends Component {
     render() {
@@ -11,6 +12,9 @@ class App extends Component {
 
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
+
+        const pokemonList = new PokemonList();
+        main.appendChild(pokemonList.render());
 
         return dom;
 
