@@ -6,10 +6,14 @@ import Loading from './Loading.js';
 import Paging from './Paging.js';
 import hashStorage from './hash-storage.js';
 import Filter from './Filter.js';
-import TypeOptions from './TypeOptions.js';
+import getTypes from '../src/getTypes.js';
+
+
+
 
 class App extends Component {
     render() {
+
 
         const dom = this.renderDOM();
 
@@ -22,11 +26,16 @@ class App extends Component {
         const paging = new Paging({ totalCount: 0 });
         main.appendChild(paging.render());
 
-        const filter = new Filter({});
+        const filter = new Filter({ types: [] });
         main.appendChild(filter.render()); 
 
-        // const typeOptions = new TypeOptions({});
-        // main.appendChild(typeOptions.render());
+        api.getTypes()
+            .then(response => response.results)
+            .then(results => {
+                return results.map(i => i.type_1);
+            })
+            .then(types => [...new Set(types)])
+            .then(types => filter.update({ types }));
 
 
         const pokemonList = new PokemonList({ allPokemon: [] });

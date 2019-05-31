@@ -6,7 +6,6 @@ class TypeSelect extends Component {
     render() {
         const menu = this.renderDOM();
         const select = menu.querySelector('select');
-        console.log(select);
         menu.appendChild(select);
         const typeOptions = new TypeOptions();
         select.appendChild(typeOptions.render());
@@ -14,8 +13,6 @@ class TypeSelect extends Component {
     }
 
     renderTemplate() {
-        // const pokemon = this.props.pokemon;
-        // console.log(this.props);
         return /*html*/ `
             <div>
                 <select class="name">

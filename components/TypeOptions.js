@@ -4,7 +4,7 @@ class TypeOptions extends Component {
 
     renderTemplate() {
         return /*html*/ `
-                <option class="type">hasdh</option>
+                <option class="type"></option>
         `;
         
     }

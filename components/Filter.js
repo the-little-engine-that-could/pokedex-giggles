@@ -4,13 +4,12 @@ import TypeSelect from './TypeSelect.js';
 
 class Filter extends Component {
     render() {
+        console.log(this.props.types)
         const dom = this.renderDOM();
         const form = dom.querySelector('form');
         const typeSelect = new TypeSelect();
-        console.log('hi from filterjs', typeSelect);
 
         form.appendChild(typeSelect.render());
-        console.log(form);
         
         const filter = {
             type: ''
