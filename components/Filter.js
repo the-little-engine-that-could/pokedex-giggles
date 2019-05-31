@@ -9,16 +9,12 @@ class Filter extends Component {
         const filter = {
             type: ''
         };
-     
 
         form.addEventListener('input', () => {
             const filterObj = new FormData(form);
             filter.type = filterObj.get('type');
 
             hashStorage.set({ type: filter.type });
-            this.props.onFilter(filter);
-
-            console.log('hi from filter.js');
         });
 
         return dom;

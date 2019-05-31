@@ -11,7 +11,6 @@ class PokemonList extends Component {
             list.appendChild(pokemonItem.render());
         });
 
-
         return list;
     }
 
