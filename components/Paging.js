@@ -37,15 +37,8 @@ class Paging extends Component {
         const currentPage = getCurrentPage();
         const perPage = 20;
         const totalCount = this.props.totalCount;
-
-        // if(!totalCount) {
-        //     return /*html*/ `
-        //         <p>SUCKS TO SUCK!</p>
-        //     `;
-        // }     
         
         const lastPage = Math.ceil(totalCount / perPage);
-        console.log(lastPage);
 
         return /*html*/ `
             <section>
@@ -54,8 +47,6 @@ class Paging extends Component {
                 <button class="next" ${currentPage === lastPage ? 'disabled' : ''}>⮑</button>
             </section>
         `;
-        
-
     }
 }
 
