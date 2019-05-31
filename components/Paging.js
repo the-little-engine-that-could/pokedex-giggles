@@ -43,7 +43,7 @@ class Paging extends Component {
         return /*html*/ `
             <section>
                 <button class="prev" ${currentPage === 1 ? 'disabled' : ''}>⮐</button>
-                <span>Page x of y</span>
+                <span>${currentPage} of ${lastPage}</span>
                 <button class="next" ${currentPage === lastPage ? 'disabled' : ''}>⮑</button>
             </section>
         `;
