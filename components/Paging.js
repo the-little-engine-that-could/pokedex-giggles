@@ -34,6 +34,8 @@ class Paging extends Component {
 
     renderTemplate() {
 
+        // check yourself before you wreck yourself - lili
+
         const currentPage = getCurrentPage();
         const perPage = 20;
         const totalCount = this.props.totalCount;
