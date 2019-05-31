@@ -6,6 +6,7 @@ import Loading from './Loading.js';
 import Paging from './Paging.js';
 import hashStorage from './hash-storage.js';
 import Filter from './Filter.js';
+import TypeOptions from './TypeOptions.js';
 
 class App extends Component {
     render() {
@@ -22,8 +23,11 @@ class App extends Component {
         main.appendChild(paging.render());
 
         const filter = new Filter({});
-
         main.appendChild(filter.render()); 
+
+        // const typeOptions = new TypeOptions({});
+        // main.appendChild(typeOptions.render());
+
 
         const pokemonList = new PokemonList({ allPokemon: [] });
         main.appendChild(pokemonList.render());
