@@ -45,6 +45,7 @@ class Paging extends Component {
         // }     
         
         const lastPage = Math.ceil(totalCount / perPage);
+        console.log(lastPage);
 
         return /*html*/ `
             <section>

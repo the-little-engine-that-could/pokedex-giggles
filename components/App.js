@@ -36,7 +36,8 @@ class App extends Component {
                     const allPokemon = response.results;
                     pokemonList.update({ allPokemon });
 
-                    const totalCount = allPokemon.count;
+                    const totalCount = response.count;
+                    console.log(totalCount);
         
                     paging.update({ totalCount });
                 })
@@ -46,6 +47,10 @@ class App extends Component {
         }
 
         loadPokedex();
+
+        window.addEventListener('hashchange', () => {
+            loadPokedex();
+        });
 
         return dom;
 
