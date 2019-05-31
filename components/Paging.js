@@ -33,11 +33,24 @@ class Paging extends Component {
     }
 
     renderTemplate() {
+
+        const currentPage = getCurrentPage();
+        const perPage = 20;
+        const totalCount = this.props.totalCount;
+
+        // if(!totalCount) {
+        //     return /*html*/ `
+        //         <p>SUCKS TO SUCK!</p>
+        //     `;
+        // }     
+        
+        const lastPage = Math.ceil(totalCount / perPage);
+
         return /*html*/ `
             <section>
-                <button class="prev">⮐</button>
+                <button class="prev" ${currentPage === 1 ? 'disabled' : ''}>⮐</button>
                 <span>Page x of y</span>
-                <button class="next">⮑</button>
+                <button class="next" ${currentPage === lastPage ? 'disabled' : ''}>⮑</button>
             </section>
         `;
         
