@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers%7CLuckiest+Guy&display=swap');
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: yellow;
+    font-size: 4em;
+}
