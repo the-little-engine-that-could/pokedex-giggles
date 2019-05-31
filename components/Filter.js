@@ -4,11 +4,10 @@ import TypeSelect from './TypeSelect.js';
 
 class Filter extends Component {
     render() {
-        console.log(this.props.types)
         const dom = this.renderDOM();
         const form = dom.querySelector('form');
-        const typeSelect = new TypeSelect();
 
+        const typeSelect = new TypeSelect({ types: this.props.types });
         form.appendChild(typeSelect.render());
         
         const filter = {
@@ -18,6 +17,7 @@ class Filter extends Component {
         form.addEventListener('input', () => {
             const filterObj = new FormData(form);
             filter.type = filterObj.get('type');
+            console.log(filter.type);
 
             hashStorage.set({ type: filter.type });
         });

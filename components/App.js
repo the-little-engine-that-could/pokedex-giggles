@@ -6,15 +6,9 @@ import Loading from './Loading.js';
 import Paging from './Paging.js';
 import hashStorage from './hash-storage.js';
 import Filter from './Filter.js';
-import getTypes from '../src/getTypes.js';
-
-
-
 
 class App extends Component {
     render() {
-
-
         const dom = this.renderDOM();
 
         const header = new Header();
