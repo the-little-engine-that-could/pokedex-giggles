@@ -6,6 +6,7 @@ import Loading from './Loading.js';
 import Paging from './Paging.js';
 import hashStorage from './hash-storage.js';
 import Filter from './Filter.js';
+import QUERY from './QUERY.js';
 
 class App extends Component {
     render() {
@@ -21,9 +22,16 @@ class App extends Component {
         const paging = new Paging({ totalCount: 0 });
         main.appendChild(paging.render());
 
-        const filter = new Filter({});
+        const filter = new Filter({
+            
+            onFilter: (filter) => {
+                pokemonList.update({ allPokemon: [] });
+            }
+
+        });
+
         main.appendChild(filter.render()); 
-        
+
         const pokemonList = new PokemonList({ allPokemon: [] });
         main.appendChild(pokemonList.render());
 

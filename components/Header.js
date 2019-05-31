@@ -9,9 +9,7 @@ class Header extends Component {
         const search = new Search();
         dom.appendChild(search.render());
 
-
         return dom;
-
     }
 
 

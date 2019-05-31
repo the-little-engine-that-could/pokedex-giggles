@@ -1,18 +1,28 @@
 import Component from './Component.js';
+import hashStorage from './hash-storage.js';
 
 class Filter extends Component {
-
-
     render() {
         const dom = this.renderDOM();
         const form = dom.querySelector('form');
         
-        console.log(form);
+        const filter = {
+            type: ''
+        };
+     
+
+        form.addEventListener('input', () => {
+            const filterObj = new FormData(form);
+            filter.type = filterObj.get('type');
+
+            hashStorage.set({ type: filter.type });
+            this.props.onFilter(filter);
+
+            console.log('hi from filter.js');
+        });
 
         return dom;
     }
-
-
 
     renderTemplate() {
         return /*html*/ `
