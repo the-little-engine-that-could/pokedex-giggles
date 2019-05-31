@@ -7,7 +7,6 @@ class TypeOptions extends Component {
         return /*html*/ `
                 <option class="${type}">${type}</option>
         `;
-        
     }
 }
 

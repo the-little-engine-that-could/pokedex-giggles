@@ -12,7 +12,6 @@ class Header extends Component {
         return dom;
     }
 
-
     renderTemplate() {
         return `
             <header>

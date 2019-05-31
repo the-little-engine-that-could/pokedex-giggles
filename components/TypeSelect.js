@@ -14,7 +14,6 @@ class TypeSelect extends Component {
         types.forEach(type => {
             const typeOptions = new TypeOptions({ type });
             select.appendChild(typeOptions.render());
-
         });
 
         return menu;

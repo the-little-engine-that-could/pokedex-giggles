@@ -31,16 +31,12 @@ class Search extends Component {
     }
 
     renderTemplate() {
-
-
         return /*html*/ ` 
             <form>
                 <input name="search">
                 <button>SEARCH ME</button>
             </form>
         `;
-
     }
-
 }
 export default Search;

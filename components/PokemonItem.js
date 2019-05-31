@@ -9,7 +9,6 @@ class PokemonItem extends Component {
                 <img src="${pokemon.url_image}" alt="">
             </li>
         `;
-
     }
 }
 
