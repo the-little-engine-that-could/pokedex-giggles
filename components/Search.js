@@ -29,8 +29,6 @@ class Search extends Component {
         return form;
     }
 
-
-
     renderTemplate() {
 
 
