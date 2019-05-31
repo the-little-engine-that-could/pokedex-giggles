@@ -5,7 +5,6 @@ class Search extends Component {
 
     render() {
         const form = this.renderDOM();
-
         const input = form.querySelector('input');
 
         form.addEventListener('submit', event => {
@@ -17,12 +16,12 @@ class Search extends Component {
 
         function setInputFromHash() {
             const queryProps = hashStorage.get();
-            input.value = queryProps.pokemon;
-        }
-        if(input.value) {
-            setInputFromHash();
+            input.value = queryProps.pokemon || '';
         }
 
+        if(input.value) {
+            setInputFromHash();
+        } 
 
         window.addEventListener('hashchange', () => {
             setInputFromHash();

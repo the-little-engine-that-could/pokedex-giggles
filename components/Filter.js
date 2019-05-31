@@ -17,9 +17,11 @@ class Filter extends Component {
         form.addEventListener('input', () => {
             const filterObj = new FormData(form);
             filter.type = filterObj.get('type');
-            console.log(filter.type);
-
-            hashStorage.set({ type: filter.type });
+            if(filter.type === 'all') {
+                hashStorage.removeAll();
+            } else {
+                hashStorage.set({ type: filter.type });
+            }
         });
 
         return dom;

@@ -9,6 +9,8 @@ class TypeSelect extends Component {
         const select = menu.querySelector('select');
         menu.appendChild(select);
         
+        types.unshift('all');
+
         types.forEach(type => {
             const typeOptions = new TypeOptions({ type });
             select.appendChild(typeOptions.render());
