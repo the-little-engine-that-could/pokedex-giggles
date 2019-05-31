@@ -1,14 +1,15 @@
 import Component from './Component.js';
 import hashStorage from './hash-storage.js';
-import TypeOptions from './TypeOptions.js';
+import TypeSelect from './TypeSelect.js';
 
 class Filter extends Component {
     render() {
         const dom = this.renderDOM();
         const form = dom.querySelector('form');
-        const typeOptions = new TypeOptions();
+        const typeSelect = new TypeSelect();
+        console.log('hi from filterjs', typeSelect);
 
-        form.appendChild(typeOptions.render());
+        form.appendChild(typeSelect.render());
         console.log(form);
         
         const filter = {
